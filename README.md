@@ -22,6 +22,20 @@ $ go test ./...
 ok      github.com/atEaE/clean-architecture-go-sample/domain    0.462s
 ```
 
+## Dockerを使った開発
+### コンテナの起動
+1. DockerイメージのBuild  
+   `docker-compose build` コマンドを実行することで、APIとDBのイメージがビルドされる。
+2. コンテナの起動  
+   `docker-compose up -d` コマンドを実行することでデタッチ状態で、コンテナを起動する。
+
+### DBコンテナへの接続
+VSCodeで開発を行っているのであれば、Docker拡張を入れて、直接Attachするのが簡単。  
+コンテナにアタッチしたら、下記のコマンドを入力して、開発用のデータベースに接続する。   
+```sh
+psql -h -p 5432 -U test -d sample_db_test
+```
+
 ## 開発環境Tips
 ### goenvを使用したMacで開発
 タイトルの組み合わせて開発を行う場合、言語サーバーなどの指定が必要なる場合がある。  
