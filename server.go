@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"github.com/atEaE-tried/clean-architecture-go/infrastructure"
+)
 
 func main() {
-	fmt.Print("Clean Architecture")
+	infrastructure.Router.Run()
 }

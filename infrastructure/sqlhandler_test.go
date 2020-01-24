@@ -1,24 +1,12 @@
-package domain
+package infrastructure
 
 import "testing"
 
 // インスタンス生成および生成される値についてチェックします。
-func TestInstance(t *testing.T) {
+func TestNewSQLHandler(t *testing.T) {
 	t.Run("インスタンスが生成されていること。", func(t *testing.T) {
-		// setup
-		id := 1
-		fname := "test"
-		lname := "user"
-
-		// check
-		user := &User{
-			ID:        id,
-			FirstName: fname,
-			LastName:  lname,
-		}
-
-		// assert
-		if user == nil {
+		sql := NewSQLHandler()
+		if sql == nil {
 			t.Error("インスタンスが生成されていません。")
 		}
 	})

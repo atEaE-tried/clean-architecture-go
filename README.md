@@ -8,7 +8,7 @@ Clean Architectureを実現するためにどういったことが必要とな�
 1. ソースコードをCloneする.  
    Local環境へソースコードをCloneしてください。
    ```sh
-   git clone git@github.com/atEaE/clean-architecture-go-sample
+   git clone git@github.com/atEaE-tried/clean-architecture-go
    ```
 
 ## テスト実行方法
@@ -18,8 +18,8 @@ Clean Architectureを実現するためにどういったことが必要とな�
 「.go」ファイルが存在するが、「xx_test.go」テストファイルが存在しない場合、左記に「?」が表示される。
 ```sh
 $ go test ./...
-?       github.com/atEaE/clean-architecture-go-sample   [no test files]
-ok      github.com/atEaE/clean-architecture-go-sample/domain    0.462s
+?       github.com/atEaE-tried/clean-architecture-go   [no test files]
+ok      github.com/atEaE-tried/clean-architecture-go/domain    0.462s
 ```
 
 ## Dockerを使った開発
