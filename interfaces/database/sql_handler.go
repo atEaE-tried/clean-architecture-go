@@ -9,7 +9,7 @@ type SQLHandler interface {
 // Result : SQLハンドラ実行結果(インフラ層に対するアダプタ)
 type Result interface {
 	LastInsertId() (int64, error)
-	RowAffected() (int64, error)
+	RowsAffected() (int64, error)
 }
 
 // Row : SQLハンドラ実行結果(インフラ層に対するアダプタ)

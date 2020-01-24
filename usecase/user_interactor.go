@@ -1,13 +1,13 @@
 package usecase
 
-import "github.com/atEaE-tried/clean-architecture-go/interfaces/domain"
+import "github.com/atEaE-tried/clean-architecture-go/domain"
 
 type UserInteractor struct {
 	UserRepository UserRepository
 }
 
 func (i *UserInteractor) Add(u domain.User) (err error) {
-	_, err := i.UserRepository.Store(u)
+	_, err = i.UserRepository.Store(u)
 	return err
 }
 

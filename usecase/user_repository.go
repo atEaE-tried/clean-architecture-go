@@ -1,7 +1,7 @@
 package usecase
 
 import (
-	"github.com/atEaE-tried/clean-architecture-go/interfaces/domain"
+	"github.com/atEaE-tried/clean-architecture-go/domain"
 )
 
 type UserRepository interface {

@@ -40,18 +40,28 @@ func (hndl *SQLHandler) Execute(statement string, args ...interface{}) (database
 	return res, nil
 }
 
+func (hndl *SQLHandler) Query(statement string, args ...interface{}) (database.Row, error) {
+	rows, err := hndl.Conn.Query(statement, args...)
+	if err != nil {
+		return new(SQLRow), err
+	}
+	row := new(SQLRow)
+	row.Rows = rows
+	return row, nil
+}
+
 // SQLResult : SQL実行結果
 type SQLResult struct {
 	Result sql.Result
 }
 
 // LastInsertId : 最後に挿入したデータのIDを取得します。
-func (rlt *SQLResult) LastInsertId() (int64, error) {
+func (rlt SQLResult) LastInsertId() (int64, error) {
 	return rlt.Result.LastInsertId()
 }
 
 // RowsAffected : SQLの実行により影響のあった行数を返却します。
-func (rlt *SQLResult) RowsAffected() (int64, error) {
+func (rlt SQLResult) RowsAffected() (int64, error) {
 	return rlt.Result.RowsAffected()
 }
 
